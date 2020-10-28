@@ -13,4 +13,8 @@ export class AppComponent {
   public onPriceChanged(price: number): void {
     alert('Aktueller preis: ' + price);
   }
+
+  public changePrice(price: number): void {
+    this.parentProduct.price = price;
+  }
 }
