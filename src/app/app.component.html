@@ -1,5 +1,6 @@
-<stn-product-display (priceChange)="onPriceChanged($event)"
- [product]="parentProduct">
- <br><input type="text" #price />
- <br><button (click)="changePrice(price.value)">Preis ändern</button><br>
-</stn-product-display>
+{{ date | date: "dd.MM.yyyy" }}
+<div *ngFor="let product of products | slice:0:3; let isOdd = odd" [ngClass]="{'grey-background' : isOdd}">
+  <stn-product-display (priceChange)="onPriceChanged($event)"
+  [product]="product">
+  </stn-product-display>
+</div>
