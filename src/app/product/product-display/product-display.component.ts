@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from '../product';
 
 @Component({
@@ -7,15 +7,10 @@ import { Product } from '../product';
   styleUrls: ['./product-display.component.css']
 })
 export class ProductDisplayComponent implements OnInit {
-  public product: Product = new Product(12, 'Granitstein Gravo', 134.56, 12);
+  @Input() public product: Product;
+  @Output() public priceChange = new EventEmitter<number>();
 
   constructor() {
-    const test: Product = {
-      id: 12,
-      name: "test",
-      price: 123,
-      weight: 12,
-    };
    }
 
   ngOnInit(): void {
@@ -23,6 +18,6 @@ export class ProductDisplayComponent implements OnInit {
 
   public raisePrice(): void {
     this.product.price += 5;
-    alert('Aktueller preis: ' + this.product.price);
+    this.priceChange.emit(this.product.price);
   }
 }

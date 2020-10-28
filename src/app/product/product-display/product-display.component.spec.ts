@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { Product } from '../product';
 
 import { ProductDisplayComponent } from './product-display.component';
 
@@ -16,6 +18,7 @@ describe('ProductDisplayComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ProductDisplayComponent);
     component = fixture.componentInstance;
+    component.product = new Product(1, 'Gravo', 100, 5);
     fixture.detectChanges();
   });
 
@@ -38,5 +41,11 @@ describe('ProductDisplayComponent', () => {
     button.click();
 
     expect(oldVal).toBeLessThan(component.product.price);
+  });
+
+  it('should display name', () => {
+    const name = fixture.debugElement.query(By.css('.nameAttribute'));
+
+    expect(name.nativeElement.textContent).toEqual('Gravo');
   });
 });
