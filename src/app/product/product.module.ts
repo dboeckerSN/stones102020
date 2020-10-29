@@ -23,6 +23,7 @@ import { MatCardModule } from '@angular/material/card';
     ReactiveFormsModule,
     MatCardModule,
   ],
+  providers: [],
   exports: [ProductDisplayComponent, ProductFormComponent]
 })
 export class ProductModule { }

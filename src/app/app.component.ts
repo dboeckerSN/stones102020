@@ -9,5 +9,4 @@ import { Product } from './product/product';
 export class AppComponent {
   title = 'Stones';
   public date = new Date();
-
 }
