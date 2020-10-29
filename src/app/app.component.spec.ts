@@ -1,4 +1,6 @@
 import { TestBed } from '@angular/core/testing';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { ProductModule } from './product/product.module';
@@ -9,6 +11,8 @@ describe('AppComponent', () => {
       imports: [
         RouterTestingModule,
         ProductModule,
+        MatToolbarModule,
+        MatCardModule,
       ],
       declarations: [
         AppComponent,
