@@ -5,16 +5,24 @@ import { ProductRoutingModule } from './product-routing.module';
 import { ProductDisplayComponent } from './product-display/product-display.component';
 import { UtilsModule } from '../utils/utils.module';
 import {MatButtonModule} from '@angular/material/button';
+import { ProductFormComponent } from './product-form/product-form.component';
+import {MatInputModule} from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ProductListComponent } from './product-list/product-list.component';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
-  declarations: [ProductDisplayComponent],
+  declarations: [ProductDisplayComponent, ProductFormComponent, ProductListComponent],
   imports: [
     CommonModule,
     ProductRoutingModule,
     UtilsModule,
     MatButtonModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatCardModule,
   ],
-  exports: [ProductDisplayComponent]
+  exports: [ProductDisplayComponent, ProductFormComponent]
 })
 export class ProductModule { }
