@@ -11,6 +11,7 @@ import { CustomValidators } from './custom-validator';
 })
 export class ProductFormComponent implements OnInit {
   public nameLength = 0;
+  public isSaved = false;
 
   public productForm = new FormGroup({
     name: new FormControl('', [Validators.required, CustomValidators.alphaNum]),
@@ -29,7 +30,9 @@ export class ProductFormComponent implements OnInit {
   }
 
   public save(): void {
-    this.pService.saveProduct({id: 1 , ...this.productForm.value});
+    this.pService.saveProduct(this.productForm.value).subscribe(
+      () => { this.isSaved = true; }
+    );
     /*
     this.saveProduct({
       id: 1,

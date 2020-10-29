@@ -9,13 +9,13 @@
     </mat-error>
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="Preis" formControlName="price">
+    <input matInput type="number" placeholder="Preis" formControlName="price">
     <mat-error *ngIf="productForm.get('price').hasError('positiv')">
       Muss Positiv sein!
     </mat-error>
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="Gewicht" formControlName="weight">
+    <input matInput type="number" placeholder="Gewicht" formControlName="weight">
     <mat-error *ngIf="productForm.get('weight').hasError('positiv')">
       Muss Positiv sein!
     </mat-error>
